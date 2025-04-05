@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pertanyaan Romantis 💘</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .question {
+      text-align: center;
+      font-size: 2rem;
+      color: #d63384;
+      margin-bottom: 30px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .options button {
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #yesBtn {
+      background-color: #28a745;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #dc3545;
+      color: white;
+      position: absolute;
+    }
+
+    #result {
+      text-align: center;
+      font-size: 2rem;
+      color: #ff1493;
+      margin-top: 30px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+    <audio id="bg-music" autoplay loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+        Browsermu tidak mendukung audio.
+      </audio>
+      
+  <div class="container">
+    <div class="question">Kamu mau gak jadi pacar aku? 🥺</div>
+    <div class="options">
+      <button id="yesBtn">Mau 💕</button>
+      <button id="noBtn">Tidak 😢</button>
+    </div>
+    <div id="result">Akhirnya kita jadian 😘💞</div>
+  </div>
+
+  <script>
+    document.addEventListener('click', () => {
+  const bgMusic = document.getElementById('bg-music');
+  if (bgMusic && bgMusic.paused) {
+    bgMusic.play();
+  }
+});
+
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const result = document.getElementById('result');
+
+    yesBtn.addEventListener('click', () => {
+      result.style.display = 'block';
+    });
+
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+      const y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+  </script>
+</body>
+</html>
