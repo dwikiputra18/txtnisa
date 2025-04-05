@@ -81,7 +81,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    height: 130%;
+    max-height: 220px;
     background: white;
     border-radius: 8px;
     padding: 20px;
@@ -92,15 +92,17 @@ body {
     line-height: 1.5;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     transition: top 1.5s ease-in-out;
+    overflow-y: auto;
     z-index: 1;
   }
+  
   
   .show .flap {
     transform: rotateX(180deg);
   }
   
   .show .paper {
-    top: -20%;
+    top: -80%;
   }
   
   @keyframes slideUp {
